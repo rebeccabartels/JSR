@@ -10,27 +10,32 @@
 <div class="prompt"></div>
 <button>Next</button>
 <script>
-var prompts= [
-	'type your name',
-	'type an adjective',
-	'type a noun'
-];
+// List of prompts for the user
+var prompts = [
+	'Type your name',
+	'Type an adjective',
+	'Type a noun'
+   ];
 
-//Keep track of current prompt we're on 
-var currentPrompt = 0; 
+// Keep track of current prompt we're on
+var currentPrompt = 0;
 
-//a function that will call the next prompt 
+// A function that will call the next prompt
 var nextPrompt = function() {
-  // put first prompt in all html elements with class prompt
-  $('.prompt').html(prompts[currentPrompt]);
-  currentPrompt = currentPrompt + 1; //adds 1 to the currentPrompt value
+	//put current prompt in all html elements with class 
+	$('.prompt').html(prompts[currentPrompt]);
+	// move the next prompt into variable currentPrompt 
+	currentPrompt = currentPrompt + 1;
 }
 
-//run nextPrompt function when button is clicked 
+// run nextPrompt function when button is clicked
 $('button').click(function() {
-  nextPrompt(); 
-}); 
+	nextPrompt();
+});
 
+//show the first prompt as soon as js loads 
+nextPrompt(); 
 
 </script>
+
 </body>
