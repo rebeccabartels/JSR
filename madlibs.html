@@ -23,6 +23,7 @@ var currentPrompt = 0;
 var nextPrompt = function() {
   // put first prompt in all html elements with class prompt
   $('.prompt').html(prompts[currentPrompt]);
+  currentPrompt = currentPrompt + 1; //adds 1 to the currentPrompt value
 }
 
 //run nextPrompt function when button is clicked 
