@@ -25,6 +25,9 @@ var currentPrompt = 0;
 
 // A function that will call the next prompt
 var nextPrompt = function() {
+  if (currentPrompt != 0) {
+    answers.push($('input').val()); 
+  }
 	// if there is a next prompt
 	if (currentPrompt < prompts.length) {
 	  //alert the val of the form 
