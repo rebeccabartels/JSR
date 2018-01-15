@@ -16,6 +16,9 @@ var prompts = [
 	'Type an adjective',
 	'Type a noun'
    ];
+   
+//here's an array to keep answers in 
+var answers = [];
 
 // Keep track of current prompt we're on
 var currentPrompt = 0;
@@ -24,6 +27,8 @@ var currentPrompt = 0;
 var nextPrompt = function() {
 	// if there is a next prompt
 	if (currentPrompt < prompts.length) {
+	  //alert the val of the form 
+	  alert($('input').val()); 
 		// put first prompt in all html elements with class 
 		//put prompt and form into your html 
 		$('.prompt').html(prompts[currentPrompt] + '<br><input type="text">');
