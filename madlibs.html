@@ -4,7 +4,6 @@
 <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 
-<script src="/assets/jquery.js"></script>
 <style>
 body {
  text-align: center;
@@ -71,13 +70,14 @@ var showFinal = function() {
   $('button').hide();
 }
 // run nextPrompt function when button is clicked
-$('button').click(function() {
+	$('button').click(function() {
 	nextPrompt();
 });
 
 // Show the first prompt as soon as js loads
 nextPrompt();
 </script>
-
+<script src="/assets/jquery.js"></script>
+jQuery(document).ready(function ($) {...}); 
 </body>
 </html> 
