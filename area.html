@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Triangle Calculator</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script type="text/javascript">
+  var a = prompt("Enter the length of side A");
+  var b = prompt("Enter the length of side B");
+  var c = prompt("Enter the length of side C");
+  a = parseInt(a);
+  b = parseInt(b);
+  c = parseInt(c);
+  s = (a + b + c) / 2;
+  area = Math.sqrt(s * (s-a) * (s-b) * (s-c));
+  alert("The area of the triangle is: " + area);
+  console.log(area);
+  </script>
+</body>
+</html>
