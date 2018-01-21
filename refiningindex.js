@@ -4,7 +4,7 @@ var dogs = [];
 
 function adoptHandler(e) {
   e.preventDefault(); //stop form from submitting
-  var dogBreed = document.querySelector("#rescue").value;
+  var dogBreed = document.querySelector("#rescue").value; //method returns the first element that matches a specified CSS selector(s) in the document.
   adoptDog(genders[Math.floor(Math.random()*genders.length)], dogBreed, names[Math.floor(Math.random()*names.length)]);
 }
 
