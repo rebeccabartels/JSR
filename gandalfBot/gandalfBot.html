@@ -21,14 +21,11 @@ body {
   font-family: 'MedievalSharp';
   font-size: 25px;
 }
-
 img {
   margin: 40px 0px 0px 0px;
   border: 7px solid white;
   border-radius: 20px;
-
 }
-
 button {
   margin: 40px; 
 }
@@ -39,7 +36,7 @@ input {
  background: white;
  color: red;
  border-bottom: 2px black solid;
- font-family: 'Shadows Into Light'; 
+ font-family: 'MedievalSharp'; 
  padding: 0 6px; 
  margin: 4px; 
 }
@@ -57,9 +54,9 @@ input {
 <script>
 // List of prompts for the user
 var prompts = [
-    'Type your name',
-    'Type an adjective',
-    'Type a noun'
+    'What is your name?',
+    'What is something you love?',
+    'What is your favorite color?'
    ];
 var answers=[];
 // Keep track of current prompt we're on
@@ -85,7 +82,7 @@ var nextPrompt = function() {
 }
 //puts user answers into HTML
 var showFinal = function() {
-  $('.prompt').html('This is the story of <span class="fill">'+answers[0]+'</span> and the <span class="fill">'+answers[1]+'</span> <span class="fill">'+answers[2]+'</span>.');
+  $('.prompt').html('So your name is <span class="fill">'+answers[0]+'</span>, you love <span class="fill">'+answers[1]+'</span>, and your favorite color is </span> <span class="fill">'+answers[2]+'</span>.');
   //and then hide the button 
   $('button').hide();
 }
