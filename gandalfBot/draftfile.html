@@ -1,0 +1,146 @@
+<head>
+<link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+<!-- <script src="/assets/jquery.js"></script>   -->
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<style> 
+
+img { 									
+  margin: 40px 0px 0px 0px;
+  border: 7px solid white;
+  border-radius: 20px;
+}
+
+
+body {
+  background-image:
+  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('https://i.imgur.com/bk5oZRs.jpg');
+  background-position: center;
+  background-repeat: no-repeat; 
+  text-align: center;
+  font-family: 'MedievalSharp';
+  font-size: 25px;
+}
+
+.fill {
+ background: white;
+ color: red;
+ border-bottom: 2px black solid;
+ font-family: 'MedievalSharp'; 
+ padding: 0 6px; 
+ margin: 4px; 
+}
+
+</style>
+
+
+<header>
+  <div class="flex">
+  <div><img src="https://vignette.wikia.nocookie.net/lotrminecraftmod/images/9/96/Gandalf_glasses_header.jpg/revision/latest?cb=20170212065501" height="135" width="175" align="middle">
+  </div>
+<div><h1>Sassy Gandalf</h1></div>
+</header>
+
+<body>
+
+  <div id="result">
+  </div>
+  <div class="input">
+  <input type="text" id="ans" placeholder="Enter your response" required/>
+  </div>
+</div>
+
+
+
+
+<script>
+
+  /*function say_hi() {
+
+    var userSays = document.getElementById('prompt').value;
+    var html = 'You said <b>' + userSays + '</b>';
+    document.getElementById('result').innerHTML = html;
+
+}
+ 
+document.getElementById('say').addEventListener('click', say_hi);
+
+say_hi(); 
+*/
+
+
+var questions = [
+    'Whats your name ?',
+    'Where are you from?',
+    'What\'s your age?',
+    'What profile you are working on?',
+    'It was nice talking you :)'
+];
+var num = 0;
+
+var inputBox = document.querySelector("#ans");
+var output = document.querySelector("#result");
+output.innerHTML = questions[num];
+
+function showResponse() {
+  var input = inputBox.value;
+  if(inputBox.value == "") {
+    
+  }else {
+  if(num == 0) {
+    output.innerHTML = `Hii ${input}`;
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for 2 secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 1) {
+    output.innerHTML = `${input} must be a good place`;
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for 2 secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 2) {
+    output.innerHTML = `So you are ${2017 - input} born`;
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for 2 secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 3) {
+    output.innerHTML = `Awesome ${input}`;
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for 2 secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  }
+  }
+}
+
+function changeQuestion() {
+  inputBox.setAttribute("placeholder", "Enter your response");
+  output.innerHTML = questions[num];
+  if(num == 4) {
+    inputBox.style.display = "none";
+  }
+}
+
+$(document).on('keypress', function(e) {
+  if(e.which == 13) {
+    showResponse();
+  }
+})
+
+$( "#ans" ).focus();
+
+
+
+</script>
+</body>
+
+
