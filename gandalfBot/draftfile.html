@@ -10,14 +10,11 @@
   crossorigin="anonymous"></script>
 
 <style> 
-
-img { 									
+img {                   
   margin: 40px 0px 0px 0px;
   border: 7px solid white;
   border-radius: 20px;
 }
-
-
 body {
   background-image:
   linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
@@ -28,7 +25,6 @@ body {
   font-family: 'MedievalSharp';
   font-size: 25px;
 }
-
 .fill {
  background: white;
  color: red;
@@ -37,7 +33,6 @@ body {
  padding: 0 6px; 
  margin: 4px; 
 }
-
 </style>
 
 
@@ -58,24 +53,27 @@ body {
   </div>
 
 <script>
-
-
 var questions = [
     'Whats your name?',
     'Where do you come from?',
     'What\'s your age?',
-    'Would you like to go go on an adventure?',
+    'Would you like to go on an adventure?',
     'What is your weapon of choice?'
 ];
+var weapons = ["sword", "bow and arrow", "ax", "wizard staff"];
 
-var weapons = ["sword", "bow and arrow", "ax", "club", "wizard staff"];
+var sword = weapons[0]; 
+var bowAndArrow = weapons[1];
+var ax = weapons[2];
+var staff = weapons[3]; 
+
+
+
 
 var num = 0;
-
 var inputBox = document.querySelector("#ans");
 var output = document.querySelector("#result");
 output.innerHTML = questions[num];
-
 function showResponse() {
   var input = inputBox.value;
   if(inputBox.value == "") {
@@ -106,38 +104,28 @@ function showResponse() {
     ++num;
     setTimeout(changeQuestion, 2000);
     } else if(num == 4) {
-      for (var i = 0; i < weapons.length; i++) {
-        weapons[i]
-        console.log(weapons); 
+      console.log("merp"); 
+      if (inputBox.value == sword) {
+        output.innerHTML = 'Aragorn would be a good person to practice sword fighting with.';
+        inputBox.value = ""; 
+        inputBox.setAttribute("placeholder", "wait two seconds"); 
+        ++num; 
+      } else if (inputBox.value == bowAndArrow) {
+        output.innerHTML = 'Legolas would be a good elf to practice bow and arrows with.';
+        inputBox.value = ""; 
+        inputBox.setAttribute("placeholder", "wait two seconds."); 
+        ++num; 
+      } else if (inputBox.value == ax) {
+        output.innerHTML = 'Gimli would be a great dwarf to show you how to use an ax!'; 
+        inputBox.value = ""; 
+        inputBox.setAttribute("placeholder", "wait two seconds"); 
+        ++num; 
+      } else if (inputBox.value == staff) {
+        output.innerHTML = 'At last, I found someone like myself. We can practice in a wizard duel.'; 
+        inputBox.value = ""; 
+        inputBox.setAttribute("placeholder", "Thanks for playing."); 
+        ++num; 
       }
-      if (inputBox.value ="sword") {
-           console.log("SWORD!");
-           output.innerHTML = 'Swords are great weapons. You might want to be trained by Aragorn.'; 
-           inputBox.value = "";
-           inputBox.setAttribute("placeholder", "Wait for 2 secs");
-           ++num;
-        }
-        if (inputBox.value = "bow and arrow") {
-            console.log("b&a");
-            output.innerHTML = 'Bows and arrows are great weapons. You might want to be trained by Legolas.'; 
-            inputBox.value = "";
-            inputBox.setAttribute("placeholder", "Wait for 2 secs");
-            ++num;
-        }
-        if (inputBox.value = "ax") {
-          console.log("b&a");
-          output.innerHTML = 'You seem rather dwarven. Gimli can help train you with an ax.'; 
-          inputBox.value = "";
-          inputBox.setAttribute("placeholder", "Wait for 2 secs");
-          ++num;
-       }
-       if (inputBox.value = "wizard staff") {
-          console.log("WIZZY");
-          output.innerHTML = 'Finally, someone with some sense. Train with me!'; 
-          inputBox.value = "";
-          inputBox.setAttribute("placeholder", "Wait for 2 secs");
-          ++num;
-       }
     } 
   }
 }
@@ -149,18 +137,12 @@ function changeQuestion() {
     inputBox.style.display = "none";
   }
 }
-
 $(document).on('keypress', function(e) {
   if(e.which == 13) {
     showResponse();
   }
 })
-
 $( "#ans" ).focus();
-
-
-
 </script>
 </body>
-
 
