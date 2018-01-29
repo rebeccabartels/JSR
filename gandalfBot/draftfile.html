@@ -65,7 +65,7 @@ var questions = [
     'Where do you come from?',
     'What\'s your age?',
     'Would you like to go go on an adventure?',
-    'I think you would be a great adventurer.'
+    'What is your weapon of choice?'
 ];
 
 var weapons = ["sword", "bow and arrow", "ax", "club", "wizard staff"];
@@ -100,19 +100,52 @@ function showResponse() {
     ++num;
     setTimeout(changeQuestion, 2000);
   } else if(num == 3) {
-    output.innerHTML = `${input}? Alright then.`;
+    output.innerHTML = `${input}? I hope you will consider joining me for an adventure.`;
     inputBox.value = "";
     inputBox.setAttribute("placeholder", "Wait for 2 secs");
     ++num;
     setTimeout(changeQuestion, 2000);
-  }
+    } else if(num == 4) {
+      for (var i = 0; i < weapons.length; i++) {
+        weapons[i]
+        console.log(weapons); 
+      }
+      if (inputBox.value ="sword") {
+           console.log("SWORD!");
+           output.innerHTML = 'Swords are great weapons. You might want to be trained by Aragorn.'; 
+           inputBox.value = "";
+           inputBox.setAttribute("placeholder", "Wait for 2 secs");
+           ++num;
+        }
+        if (inputBox.value = "bow and arrow") {
+            console.log("b&a");
+            output.innerHTML = 'Bows and arrows are great weapons. You might want to be trained by Legolas.'; 
+            inputBox.value = "";
+            inputBox.setAttribute("placeholder", "Wait for 2 secs");
+            ++num;
+        }
+        if (inputBox.value = "ax") {
+          console.log("b&a");
+          output.innerHTML = 'You seem rather dwarven. Gimli can help train you with an ax.'; 
+          inputBox.value = "";
+          inputBox.setAttribute("placeholder", "Wait for 2 secs");
+          ++num;
+       }
+       if (inputBox.value = "wizard staff") {
+          console.log("WIZZY");
+          output.innerHTML = 'Finally, someone with some sense. Train with me!'; 
+          inputBox.value = "";
+          inputBox.setAttribute("placeholder", "Wait for 2 secs");
+          ++num;
+       }
+    } 
   }
 }
 
 function changeQuestion() {
   inputBox.setAttribute("placeholder", "Enter your response");
   output.innerHTML = questions[num];
-  if(num == 4) {
+  if(num == 5) {
     inputBox.style.display = "none";
   }
 }
