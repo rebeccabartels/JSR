@@ -33,6 +33,7 @@ body {
  padding: 0 6px; 
  margin: 4px; 
 }
+
 </style>
 
 
@@ -50,6 +51,7 @@ body {
   <div class="input">
   <input type="text" id="ans" placeholder="Enter your response" required/>
   </div>
+  <div class="fellowship"> <img src = "fellowship.jpg"></div>
   </div>
 
 <script>
@@ -58,14 +60,32 @@ var questions = [
     'Where do you come from?',
     'What\'s your age?',
     'Would you like to go on an adventure?',
-    'What is your weapon of choice?'
+    'What is your weapon of choice?',
+    'Who is your favorite character from the Fellowship? See picture below.'
 ];
-var weapons = ["sword", "bow and arrow", "ax", "wizard staff"];
 
+
+var weapons = ["sword", "bow and arrow", "ax", "wizard staff"];
+var characters =  ["Legolas", "Gimli", "Aragorn", "Gandalf", "Frodo", "Boromir", "Merry", "Pippin", "Sam"]
+
+//weapons 
 var sword = weapons[0]; 
 var bowAndArrow = weapons[1];
 var ax = weapons[2];
 var staff = weapons[3]; 
+
+//characters 
+
+var legolas = characters[0]; 
+var gimli = characters[1];
+var aragorn = characters[2]; 
+var gandalf = characters[3]; 
+var frodo = characters[4]; 
+var boromir = characters[5]; 
+var merry = characters[6]; 
+var pippin = characters[7]; 
+var sam = characters[8]; 
+
 
 
 
@@ -74,11 +94,14 @@ var num = 0;
 var inputBox = document.querySelector("#ans");
 var output = document.querySelector("#result");
 output.innerHTML = questions[num];
+
+
 function showResponse() {
+
   var input = inputBox.value;
   if(inputBox.value == "") {
     
-  }else {
+  } else {
   if(num == 0) {
     output.innerHTML = `Greetings, ${input}`;
     inputBox.value = "";
@@ -104,36 +127,93 @@ function showResponse() {
     ++num;
     setTimeout(changeQuestion, 2000);
     } else if(num == 4) {
-      console.log("merp"); 
       if (inputBox.value == sword) {
         output.innerHTML = 'Aragorn would be a good person to practice sword fighting with.';
         inputBox.value = ""; 
         inputBox.setAttribute("placeholder", "wait two seconds"); 
         ++num; 
+        setTimeout(changeQuestion, 2000);
       } else if (inputBox.value == bowAndArrow) {
         output.innerHTML = 'Legolas would be a good elf to practice bow and arrows with.';
         inputBox.value = ""; 
         inputBox.setAttribute("placeholder", "wait two seconds."); 
         ++num; 
+        setTimeout(changeQuestion, 2000);
       } else if (inputBox.value == ax) {
         output.innerHTML = 'Gimli would be a great dwarf to show you how to use an ax!'; 
         inputBox.value = ""; 
         inputBox.setAttribute("placeholder", "wait two seconds"); 
         ++num; 
+        setTimeout(changeQuestion, 2000);
       } else if (inputBox.value == staff) {
         output.innerHTML = 'At last, I found someone like myself. We can practice in a wizard duel.'; 
         inputBox.value = ""; 
-        inputBox.setAttribute("placeholder", "Thanks for playing."); 
+        inputBox.setAttribute("placeholder", "wait two seconds."); 
         ++num; 
+        setTimeout(changeQuestion, 2000);
       }
+    } else if(num == 5) {
+      favoriteCharacter(); 
     } 
   }
 }
 
+function favoriteCharacter(){ 
+for (var i = 0; i < characters.length; i++) {
+  characters[i];
+  
+  } if (inputBox.value == characters[0]) {
+        console.log("legolas"); 
+        output.innerHTML = 'Oh yes, the Elvish princeling!'; 
+        inputBox.value = ""; 
+        inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[1]) {
+      console.log("gimli"); 
+      output.innerHTML = 'Did you know, Dwarves are natural sprinters. Very dangerous at a short distance.'
+      inputBox.value = ""; 
+      inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[2]) {
+      console.log("aragorn");
+      output.innerHTML = 'Aragorn is so serious all the time. He needs a chill friend like you.'; 
+      inputBox.value = "";
+      inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[3]) {
+    console.log("gandalf"); 
+    output.innerHTML = 'I see you have some sense. Yes, I am the best character. I mean, Eagles, AmIRite?'
+    inputBox.value = ""; 
+    inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[4]) {
+    console.log("frodo");  //boromir merry pippin sam 
+    output.innerHTML = 'Poor Frodo...'; 
+    inputBox.value = ""; 
+    inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[5]) {
+    console.log("boromir");
+    output.innerHTML = 'He used to be an adventurer like you, once. Then he took an arrow...or three.'; 
+    inputBox.value = ""; 
+    inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[6]) {
+    console.log("merry"); 
+    output.innerHTML = 'Ah, Brandybuck fan are you?'
+    inputBox.value = ""; 
+    inputBox.setAttribute("placeholder", "wait two seconds."); 
+  } else if (inputBox.value == characters[7]) {
+    console.log("pippin");
+    output.innerHTML = 'FOOL OF A TOOK!'; 
+    inputBox.value = ""; 
+    inputBox.setAttribute("placeholder", "wait two seconds.");
+  } else if (inputBox.value == characters[8]) {
+    console.log("sam");
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "wait two seconds."); 
+  }
+}
+
+
 function changeQuestion() {
   inputBox.setAttribute("placeholder", "Enter your response");
   output.innerHTML = questions[num];
-  if(num == 5) {
+  if(num == 6) {
     inputBox.style.display = "none";
   }
 }
