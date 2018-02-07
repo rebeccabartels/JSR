@@ -218,13 +218,12 @@ function pleaseAsk() {
   'all we have to do is decide what to do with the time that is  given to us.',
   'Your fingers would remember their old strength better, if they grasped your sword-hilt.'];  
   var rand = dialogue[Math.floor(Math.random() * dialogue.length)];
-  console.log(rand); 
-  alert(rand); 
-
   inputBox.setAttribute("placeholder", "Ask me anything.");
-  output.innerHTML = dialogue[currentDialogue];
+  //output.innerHTML = dialogue[currentDialogue];
   if(currentDialogue <= 10) {
+    output.innerHTML = rand; 
     inputBox.setAttribute("placeholder", "Ask me anything.");
+
   }
 }
 
