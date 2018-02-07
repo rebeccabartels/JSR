@@ -78,7 +78,7 @@ var classMates = [
   "Sonyl"
 ];
 
-var dialogue = ['A wizard is never late. Nor is he early. He arrives precisely when he means to.', 
+/*var dialogue = ['A wizard is never late. Nor is he early. He arrives precisely when he means to.', 
   'You shall not pass!', 
   'If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.', 
   'They mistook me for a vegabond and they regretted that.', 
@@ -88,9 +88,7 @@ var dialogue = ['A wizard is never late. Nor is he early. He arrives precisely w
   'It\s raining master dwarf!',
   'all we have to do is decide what to do with the time that is  given to us.',
   'Your fingers would remember their old strength better, if they grasped your sword-hilt.'];  
-
-  var currentDialogue = 0; //keep track of above dialogue 
-
+*/
 
   function randomQuote() {
   return quotes[Math.floor(Math.random() * dialogue.length)];
@@ -208,12 +206,35 @@ function changeDialogue() {
 }
 
 function pleaseAsk() {
+  var currentDialogue = 0; //keep track of above dialogue 
+  var dialogue = ['A wizard is never late. Nor is he early. He arrives precisely when he means to.', 
+  'You shall not pass!', 
+  'If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.', 
+  'They mistook me for a vegabond and they regretted that.', 
+  'Goodmorning? do you mean to wish me a good morning, or do you mean it\s a morning to be good on?', 
+  'True courage is not about knowing when to take a life but when to spare one.', 
+  'Well, here at last, dear friends, on the shores of the sea comes the end of our fellowship in middle-earth. Go in peace! I will not say: do not weep for not all tears are an evil.',
+  'It\s raining master dwarf!',
+  'all we have to do is decide what to do with the time that is  given to us.',
+  'Your fingers would remember their old strength better, if they grasped your sword-hilt.'];  
+  var rand = dialogue[Math.floor(Math.random() * dialogue.length)];
+  console.log(rand); 
+  alert(rand); 
+
   inputBox.setAttribute("placeholder", "Ask me anything.");
   output.innerHTML = dialogue[currentDialogue];
   if(currentDialogue <= 10) {
-    inputBox.style.display = "none";
+    inputBox.setAttribute("placeholder", "Ask me anything.");
   }
 }
+
+/*function GetValue()
+{
+    var myarray= new Array("item1","item2","item3");
+    var random = myarray[Math.floor(Math.random() * myarray.length)];
+    //alert(random);
+    document.getElementById("message").innerHTML=random;}
+*/
 
 function favoriteCharacter(){ 
 for (var i = 0; i < characters.length; i++) {
@@ -269,15 +290,7 @@ for (var i = 0; i < characters.length; i++) {
   } else if (num == 6) {
     console.log("hi")
   }
-
-function randomTalk() {
-var rand = myArray[Math.floor(Math.random() * dialogue.length)];
-if(num == 6) {
-  console.log("ommg");
-  }
 }
-}
-
 
 
 function changeQuestion() {
