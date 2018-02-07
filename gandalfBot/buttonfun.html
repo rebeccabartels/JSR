@@ -1,0 +1,78 @@
+<head>
+<link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+<!-- <script src="/assets/jquery.js"></script>   -->
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<style> 
+
+body {
+  background-image:
+  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('https://i.imgur.com/bk5oZRs.jpg');
+  background-position: center;
+  background-repeat: no-repeat; 
+  text-align: center;
+  font-family: 'MedievalSharp';
+  font-size: 25px;
+}
+.fill {
+ background: white;
+ color: red;
+ border-bottom: 2px black solid;
+ font-family: 'MedievalSharp'; 
+ padding: 0 6px; 
+ margin: 4px; 
+}
+
+</style>
+
+
+<header>
+  <div class="flex">
+ 
+<div><h1>This is a Button Page</h1></div>
+</header>
+
+<body>
+
+  <div id="result">
+  </div>
+
+  <div class="input">
+  <input type="text" id="ans" placeholder="Enter your response" required/>
+  </div>
+
+<script>
+
+var bgcolor; 
+var canvas; 
+
+function setup() {
+	canvas = createCanvas(200, 200); 
+	bgcolor = color(0); 
+}
+
+function draw() {
+	background(200); 
+	fill(255, 0, 175); 
+	rect(100, 100, 50, 60); 
+}
+
+function mousePressed () {
+	bgcolor = color(random(255)); 
+}
+
+setup();
+draw(); 
+mousePressed(); 
+
+
+</script>
+</body>
+
